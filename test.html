@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragrant Flower | Eternal Bloom</title>
+    <link rel="icon" type="image/png" href="./image/logo.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+
+    <style>
+        body { 
+            font-family: 'Quicksand', sans-serif; 
+            background: #fffafa; 
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+        .serif-font { font-family: 'Cormorant+Garamond', serif; }
+        
+        /* Romantic Background */
+        .bloom-gradient {
+            background: linear-gradient(180deg, #ffffff 0%, #fff0f3 50%, #f0f7ff 100%);
+        }
+
+        /* Floating Petals Container */
+        #petal-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 50;
+        }
+        .petal {
+            position: absolute;
+            background: #ffb7c5;
+            border-radius: 150% 0 150% 0;
+            opacity: 0.6;
+        }
+
+        /* Soft Parallax Image */
+        .img-main {
+            max-height: 650px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
+            object-fit: cover;
+        }
+
+        /* 3D Floating Effect */
+        .floating-card {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .floating-card:hover {
+            transform: translateY(-15px) rotateY(10deg);
+        }
+
+        /* Massive Background Text (Softly Faded) */
+        .bg-text {
+            position: absolute;
+            font-size: 15vw;
+            font-weight: 700;
+            color: rgba(255, 182, 193, 0.1);
+            z-index: -1;
+            white-space: nowrap;
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="bloom-gradient">
+
+    <div id="petal-container"></div>
+
+    <nav class="fixed top-0 w-full z-[100] p-10 flex justify-between items-center">
+        <img src="./image/logo.png" alt="Logo" class="h-12 drop-shadow-md">
+        <div class="flex gap-8 text-pink-400 font-bold uppercase tracking-widest text-xs">
+            <a href="#" class="hover:text-pink-600 transition-all">Our Story</a>
+            <a href="#" class="hover:text-pink-600 transition-all">Memories</a>
+        </div>
+    </nav>
+
+    <section class="relative h-screen flex items-center justify-center px-10">
+        <div class="bg-text" id="main-bg-text">BLOOMING WITH DIGNITY</div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-7xl">
+            <div class="relative group" id="hero-img-box">
+                <div class="absolute -inset-4 bg-pink-100 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                <img src="./image/waguri.png" class="img-main relative z-10" alt="Waguri">
+            </div>
+            <div class="space-y-6">
+                <h1 class="text-7xl lg:text-8xl font-light serif-font italic text-pink-500">Fragrant <br> <span class="text-gray-800 not-italic font-bold">Flowers</span></h1>
+                <p class="text-xl text-gray-400 leading-relaxed font-light">
+                    A gentle world where walls melt away under the scent of cherry blossoms and the warmth of a kind heart.
+                </p>
+                <div class="w-20 h-[1px] bg-pink-300"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="min-h-screen py-20 relative flex flex-col justify-center overflow-hidden">
+        <div class="flex justify-around items-center px-10 gap-4">
+            <div class="char-reveal left-reveal opacity-0">
+                <img src="./image/rintaro.png" class="img-main grayscale hover:grayscale-0 transition-all duration-1000 shadow-none">
+            </div>
+            
+            <div class="text-center z-10 max-w-lg">
+                <h2 class="serif-font text-5xl italic text-pink-400 mb-8">The Silent Whisper</h2>
+                <p id="type-text" class="text-lg leading-loose text-gray-500 italic"></p>
+            </div>
+
+            <div class="char-reveal right-reveal opacity-0">
+                <img src="./image/waguri-.png" class="img-main shadow-none">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-40 bg-white/30 backdrop-blur-md" id="gallery">
+        <h3 class="text-center serif-font text-6xl mb-20 text-gray-800">Captured Moments</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-10 max-w-7xl mx-auto">
+            <script>
+                const cards = ['./image/card1.jpg','./image/card2.jpg','./image/card3.jpg','./image/card4.jpg','./image/card5.jpg','./image/card6.jpg','./image/card7.jpg','./image/card8.jpg','./image/card9.jpg','./image/card10.jpg','./image/card11.jpg','./image/card12.jpg','./image/card13.jpg','./image/card14.jpg'];
+                cards.forEach(img => {
+                    document.write(`
+                        <div class="gallery-card floating-card overflow-hidden rounded-2xl aspect-[3/4] shadow-lg">
+                            <img src="${img}" class="w-full h-full object-cover">
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+    </section>
+
+    <section class="h-screen flex items-center bg-white overflow-hidden" id="frame-scroll-section">
+        <div class="flex gap-10 px-20 shrink-0" id="frame-container">
+            <script>
+                const frames = ['./image/frame1.avif', './image/frame2.avif', './image/frame3.jfif', './image/frame4.jfif', './image/frame5.jpg', './image/frame6.png', './image/frame7.webp', './image/frame8.webp', './image/frame9.png', './image/frame10.png', './image/frame11.webp'];
+                frames.forEach(src => {
+                    document.write(`<img src="${src}" class="h-[600px] w-auto rounded-3xl shadow-xl hover:scale-105 transition-transform duration-500">`);
+                });
+            </script>
+        </div>
+    </section>
+
+    <section class="py-40 space-y-80">
+        <div class="story-row flex flex-col lg:flex-row items-center gap-20 px-20">
+            <img src="./image/rintaru-story.jfif" class="img-main lg:w-1/2">
+            <div class="lg:w-1/2 space-y-8">
+                <h4 class="serif-font text-6xl italic">Rintaro Tsumugi</h4>
+                <p class="text-xl text-gray-500 leading-relaxed font-light">
+                    The world sees a delinquent, but she sees the boy who saves the last piece of cake for his mother. Rintaro's journey is one of shedding the armor he built to survive. Every interaction with Waguri is a petal falling from the wall he built around his heart. He discovers that dignity isn't about looking tough—it's about the courage to be gentle when the world expects you to be a storm.
+                </p>
+                <p class="text-xl text-gray-500 leading-relaxed font-light">
+                    His silence isn't anger; it's the quiet of someone who hasn't been heard for a long time. Through the scent of the flowers at Kikyo, he finally finds his own voice.
+                </p>
+            </div>
+        </div>
+
+        <div class="story-row flex flex-col lg:flex-row-reverse items-center gap-20 px-20">
+            <img src="./image/waguri-story.jfif" class="img-main lg:w-1/2">
+            <div class="lg:w-1/2 space-y-8">
+                <h4 class="serif-font text-6xl italic text-pink-400">Kaoruko Waguri</h4>
+                <p class="text-xl text-gray-500 leading-relaxed font-light">
+                    She is the fragrance that lingers long after the flower has bloomed. Kaoruko doesn't just look at people; she perceives them. Her kindness isn't a weakness; it is a conscious choice she makes every single day to bridge the gap between their rival schools.
+                </p>
+                <p class="text-xl text-gray-500 leading-relaxed font-light">
+                    In her eyes, there are no "bad boys" or "perfect girls"—only individuals waiting to be understood. Her love for Rintaro is pure, unwavering, and acts as the light that guides him home.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-60 flex flex-col items-center justify-center relative overflow-hidden">
+        <div class="bg-text" style="top: 50%; left: 10%">ETERNAL LOVE</div>
+        <div class="relative z-10 text-center">
+            <div class="flex gap-4 justify-center mb-10">
+                <img src="./image/subaru.webp" class="w-32 h-32 rounded-full ring-4 ring-pink-200 shadow-2xl">
+                <img src="./image/happy-waguri.webp" class="w-32 h-32 rounded-full ring-4 ring-pink-200 shadow-2xl">
+            </div>
+            <h2 class="serif-font text-7xl italic text-gray-800">Happiness is a blooming flower.</h2>
+            <p class="mt-6 text-pink-400 tracking-[0.4em] font-bold uppercase text-xs">A promise kept across the garden wall</p>
+        </div>
+    </section>
+
+    <footer class="p-20 border-t border-pink-100 flex justify-between items-center text-gray-400">
+        <img src="./image/logo.png" class="h-8 opacity-50">
+        <p>&copy; 2026 Fragrant Flowers. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth Scroll
+        const lenis = new Lenis();
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Petal Generator
+        const petalCont = document.getElementById('petal-container');
+        for(let i=0; i<30; i++) {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.top = Math.random() * 100 + 'vh';
+            petal.style.width = Math.random() * 15 + 5 + 'px';
+            petal.style.height = petal.style.width;
+            petalCont.appendChild(petal);
+            
+            gsap.to(petal, {
+                y: '100vh',
+                x: '+=100',
+                rotation: 360,
+                duration: Math.random() * 10 + 10,
+                repeat: -1,
+                delay: Math.random() * 10,
+                ease: "none"
+            });
+        }
+
+        // Floating Background Text
+        gsap.to("#main-bg-text", {
+            x: -300,
+            scrollTrigger: { trigger: "body", scrub: 1, start: "top top", end: "bottom bottom" }
+        });
+
+        // Typewriter logic
+        const content = "One was feared for his eyes, the other was loved for her smile. Between the silence of the bakery and the noise of the school halls, a fragrance began to bloom that neither could ignore...";
+        let charIdx = 0;
+        function type() {
+            if(charIdx < content.length) {
+                document.getElementById('type-text').innerHTML += content.charAt(charIdx);
+                charIdx++;
+                setTimeout(type, 40);
+            }
+        }
+        ScrollTrigger.create({ trigger: "#type-text", start: "top 80%", onEnter: type });
+
+        // Reveal Characters
+        gsap.to(".left-reveal", { opacity: 1, x: 50, scrollTrigger: { trigger: ".left-reveal", start: "top 70%", scrub: 1 }});
+        gsap.to(".right-reveal", { opacity: 1, x: -50, scrollTrigger: { trigger: ".right-reveal", start: "top 70%", scrub: 1 }});
+
+        // Horizontal Frames (Optimized speed)
+        const frameCont = document.getElementById('frame-container');
+        gsap.to(frameCont, {
+            x: () => -(frameCont.scrollWidth - window.innerWidth + 200),
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#frame-scroll-section",
+                pin: true,
+                scrub: 1.5,
+                end: () => "+=" + frameCont.scrollWidth
+            }
+        });
+
+        // Story Image Parallax
+        gsap.utils.toArray(".story-row img").forEach(img => {
+            gsap.from(img, {
+                scale: 0.8,
+                opacity: 0,
+                scrollTrigger: { trigger: img, start: "top 90%", end: "top 60%", scrub: 1 }
+            });
+        });
+    </script>
+</body>
+</html>

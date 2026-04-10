@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fragrant Flower | Dignity in Bloom · refined</title>
+  <link rel="icon" type="image/png" href="./image/logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+  <link rel="stylesheet" href="./style.css" />
+
+</head>
+<body class="hero-bloom">
+<div id="petal-container"></div>
+<!-- NAVIGATION · OPTION 1: ELEGANT MINIMAL -->
+<nav class="fixed top-0 w-full z-[100] px-8 lg:px-12 py-5 flex justify-between items-center bg-white/60 backdrop-blur-xl border-b border-white/50 shadow-sm">
+  
+  <!-- Logo with subtle animation -->
+  <a href="#home" class="group relative">
+    <img src="./image/logo.png" alt="Fragrant Flower" class="h-11 relative z-10 transition-all duration-500 group-hover:scale-105">
+    <div class="absolute -inset-2 bg-pink-200/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+  </a>
+
+  <!-- Center: Main Navigation -->
+  <div class="hidden md:flex items-center gap-1">
+    <a href="#home" class="nav-link px-5 py-2 text-sm font-semibold tracking-wide text-gray-600 hover:text-pink-500 transition-all duration-300 relative group">
+      Home
+      <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-pink-400 to-rose-400 group-hover:w-full transition-all duration-300"></span>
+    </a>
+    <a href="#carousel-bond" class="nav-link px-5 py-2 text-sm font-semibold tracking-wide text-gray-600 hover:text-pink-500 transition-all duration-300 relative group">
+      Story
+      <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-pink-400 to-rose-400 group-hover:w-full transition-all duration-300"></span>
+    </a>
+    <a href="#carousel-gallery" class="nav-link px-5 py-2 text-sm font-semibold tracking-wide text-gray-600 hover:text-pink-500 transition-all duration-300 relative group">
+      Gallery
+      <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-pink-400 to-rose-400 group-hover:w-full transition-all duration-300"></span>
+    </a>
+    <a href="#frames-section" class="nav-link px-5 py-2 text-sm font-semibold tracking-wide text-gray-600 hover:text-pink-500 transition-all duration-300 relative group">
+      Frames
+      <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-pink-400 to-rose-400 group-hover:w-full transition-all duration-300"></span>
+    </a>
+  </div>
+
+  <!-- Right: CTA / Icon -->
+  <div class="flex items-center gap-3">
+    <button class="hidden md:flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-pink-100 to-rose-100 hover:from-pink-200 hover:to-rose-200 text-gray-700 rounded-full text-sm font-medium border border-pink-200/50 transition-all duration-300 shadow-sm hover:shadow-md">
+      <i class="fa-regular fa-flower text-pink-400 text-xs"></i>
+      <span>Bloom</span>
+    </button>
+    
+    <!-- Mobile Menu Toggle (Hidden on desktop) -->
+    <button class="md:hidden p-2 text-gray-600 hover:text-pink-500 transition">
+      <i class="fa-solid fa-bars text-xl"></i>
+    </button>
+  </div>
+
+</nav>
+
+<!-- HERO — PARALLAX (awesome) -->
+<section id="home" class="relative min-h-screen flex items-center px-8 pt-20 overflow-hidden">
+  <div class="bg-watermark -top-10 left-0 rotate-6">DIGNITY</div>
+  <div class="bg-watermark bottom-0 right-0 -rotate-12">BLOOM</div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 w-full items-center gap-8">
+    <div class="relative flex justify-center items-center">
+      <div class="absolute w-[95%] h-[85%] bg-pink-200/30 rounded-[70px] rotate-6 blur-3xl"></div>
+      <div class="absolute w-[75%] h-[75%] bg-blue-200/20 rounded-[90px] -rotate-6 blur-3xl"></div>
+      <img src="./image/waguri.png" alt="Waguri" class="relative z-10 w-full max-w-lg object-contain  parallax-img" data-speed="0.1">
+    </div>
+    <div class="space-y-6 lg:pl-16 py-10">
+      <div class="flex items-center gap-2 text-pink-500 font-bold tracking-tighter"><i class="fa-solid fa-seedling"></i><span>DIGNITY IN BLOOM · 2026</span></div>
+      <h1 class="text-8xl lg:text-9xl font-extrabold leading-none italic uppercase tracking-tight">Fragrant <br> <span class="text-stroke">Flowers</span></h1>
+      <p class="text-xl text-gray-700 max-w-lg font-light">A delicate tale of walls crumbling, hearts opening, and fragrance found in unexpected souls.</p>
+      <button class="px-10 py-5 bg-[#ff7f99] text-white rounded-full flex items-center gap-4 group hover:bg-pink-600 transition shadow-xl text-lg">EXPLORE STORY <i class="fa-solid fa-arrow-right group-hover:translate-x-2"></i></button>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECOND SECTION : CAROUSEL STYLE (Unlikely Bond) more text, more design -->
+<section class="min-h-screen pb-24 relative overflow-hidden " id="carousel-bond">
+    <div class="h-15 bg-[rgba(255, 182, 193, 0.6)] w-full"></div>
+  <div class="bg-watermark left-1/2 -translate-x-1/2 top-40 text-8xl opacity-10">FRAGRANCE</div>
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-6xl md:text-7xl font-black italic text-center mb-6 text-gray-800">The Unlikely Bond</h2>
+    <div class="flex justify-center mb-12"><div class="h-1 w-24 bg-pink-400 rounded-full"></div></div>
+    
+    <!-- Carousel container (text + nav) -->
+    <div class="relative flex flex-col lg:flex-row items-center gap-12">
+      <!-- left : rintaro image static -->
+      <div class="w-full lg:w-1/3 flex justify-center character-slide-left opacity-0">
+        <img src="./image/rintaro.png" alt="Rintaro" class="img-max-h h-[550px] grayscale hover:grayscale-0 transition-all duration-700 ">
+      </div>
+      
+      <!-- center : carousel text (4 blocks) -->
+      <div class="w-full lg:w-1/3 text-center z-20 bg-white/60 backdrop-blur-sm p-10 rounded-4xl shadow-2xl border border-white">
+        <div class="carousel-text-container relative min-h-[320px] flex flex-col justify-center">
+          <div id="carousel-text-1" class="carousel-text-item text-xl leading-relaxed text-gray-800">
+            <span class="text-4xl mb-4 block">🌸</span>
+            <p class="font-serif text-2xl italic mb-4">"Two schools, two worlds."</p>
+            <p class="text-base">Chidori and Kikyo have always been rivals. But when Rintaro steps into Waguri's bakery, the scent of fresh bread begins to dissolve years of prejudice.</p>
+          </div>
+          <div id="carousel-text-2" class="carousel-text-item absolute inset-0 opacity-0 text-xl leading-relaxed text-gray-800">
+            <span class="text-4xl mb-4 block">🍞</span>
+            <p class="font-serif text-2xl italic mb-4">"He was terrifying. She saw a boy."</p>
+            <p class="text-base">Everyone flinches at Rintaro's glare — except Kaoruko. She offers him a melon bread and a smile. That small gesture becomes the seed of change.</p>
+          </div>
+          <div id="carousel-text-3" class="carousel-text-item absolute inset-0 opacity-0 text-xl leading-relaxed text-gray-800">
+            <span class="text-4xl mb-4 block">💬</span>
+            <p class="font-serif text-2xl italic mb-4">"Walls begin to crack."</p>
+            <p class="text-base">Through shared lunches and quiet conversations, they learn about each other's hidden struggles. Their bond becomes a quiet rebellion against stereotypes.</p>
+          </div>
+          <div id="carousel-text-4" class="carousel-text-item absolute inset-0 opacity-0 text-xl leading-relaxed text-gray-800">
+            <span class="text-4xl mb-4 block">✨</span>
+            <p class="font-serif text-2xl italic mb-4">"A fragrant friendship blooms."</p>
+            <p class="text-base">What started in a bakery transforms into a circle of trust. They discover that dignity isn't about being strong — it's about letting someone see your thorns.</p>
+          </div>
+        </div>
+        <!-- carousel indicators -->
+        <div class="flex justify-center gap-3 mt-8">
+          <button class="carousel-dot w-3 h-3 rounded-full bg-pink-400 transition-all" data-index="0"></button>
+          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-pink-300" data-index="1"></button>
+          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-pink-300" data-index="2"></button>
+          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-pink-300" data-index="3"></button>
+        </div>
+        <p class="text-sm text-gray-400 mt-4">↻ tap dots · auto cycle</p>
+      </div>
+
+      <!-- right : waguri image -->
+      <div class="w-full lg:w-1/3 flex justify-center character-slide-right opacity-0">
+        <img src="./image/waguri-.png" alt="Waguri" class="img-max-h h-[550px] ">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="carousel-gallery" class="py-32  overflow-hidden relative">
+
+  <!-- pink glow -->
+  <div class="pink-glow"></div>
+
+  <h2 class="text-center text-5xl font-bold mb-20 text-gray-800">
+    ✦ Blooming Memories ✦
+  </h2>
+
+  <div class="carousel-wrapper">
+    <div class="carousel-track" id="carouselTrack">
+      
+      <!-- images -->
+      <img src="./image/card1.jpg" class="carousel-item">
+      <img src="./image/card2.jpg" class="carousel-item">
+      <img src="./image/card3.jpg" class="carousel-item">
+      <img src="./image/card4.jpg" class="carousel-item">
+      <img src="./image/card5.jpg" class="carousel-item">
+      <img src="./image/card6.jpg" class="carousel-item">
+      <img src="./image/card7.jpg" class="carousel-item">
+      <img src="./image/card8.jpg" class="carousel-item">
+
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="imageModal" class="modal hidden">
+    <button class="close-btn" onclick="closeModal()">✕</button>
+    <button class="nav-btn left" onclick="prevImage()">‹</button>
+    <img id="modalImg">
+    <button class="nav-btn right" onclick="nextImage()">›</button>
+  </div>
+
+</section>
+
+<!-- GLASS DEVOTION · OPTION 1: ELEGANT MANIFESTO -->
+<section class="h-screen flex items-center justify-center relative overflow-hidden">
+  <!-- Background Image -->
+  <img src="./image/bg.webp" class="absolute inset-0 w-full h-full object-cover -z-10">
+  
+  <!-- Dark Overlay for Text Contrast -->
+  <div class="absolute inset-0 bg-black/40 -z-10"></div>
+
+  <!-- Decorative Background Text -->
+  <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+    <span class="text-white text-[15vw] font-black italic tracking-widest">DEVOTION</span>
+  </div>
+
+  <div class="glass-card p-16 max-w-5xl w-full text-white shadow-2xl mx-8 backdrop-blur-xl bg-white/10 border border-white/30">
+    <!-- Icon & Title Group -->
+    <div class="flex flex-col items-center mb-10">
+      <div class="text-6xl mb-6 flex gap-4">
+        <i class="fa-regular fa-gem text-pink-200"></i>
+        <i class="fa-solid fa-feather-point text-white/70"></i>
+        <i class="fa-regular fa-star text-amber-200"></i>
+      </div>
+      <h3 class="text-7xl lg:text-8xl font-black italic tracking-tight">
+        Pure <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-amber-200">Devotion</span>
+      </h3>
+      <div class="h-0.5 w-32 bg-gradient-to-r from-transparent via-white to-transparent mt-4"></div>
+    </div>
+
+    <!-- Multi-Line Poetic Text Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+      <div class="space-y-4">
+        <i class="fa-solid fa-seedling text-3xl text-green-300"></i>
+        <p class="text-xl font-light leading-relaxed">"Like flowers that bloom in silence, true dignity is the strength to be kind."</p>
+      </div>
+      <div class="space-y-4 md:border-l md:border-white/20 md:pl-8">
+        <i class="fa-regular fa-heart text-3xl text-pink-300"></i>
+        <p class="text-xl font-light leading-relaxed">"Despite the thorns of the world, we choose to soften, we choose to grow."</p>
+      </div>
+      <div class="space-y-4 md:border-l md:border-white/20 md:pl-8">
+        <i class="fa-solid fa-droplet text-3xl text-blue-200"></i>
+        <p class="text-xl font-light leading-relaxed">"The most fragrant revolution is a quiet one, rooted in unwavering tenderness."</p>
+      </div>
+    </div>
+    
+    <!-- Footer Quote -->
+    <div class="mt-12 text-center">
+      <p class="font-serif text-3xl italic text-white/80">— Kaoruko Waguri's wisdom —</p>
+    </div>
+  </div>
+</section>
+
+<!-- CINEMATIC FRAMES — FASTER SCROLL (fixed speed) -->
+<section  class="py-12 pt-[100px] bg-white overflow-hidden" id="frames-section">
+  <div class="bg-watermark left-0 top-20 opacity-10">CINEMATIC</div>
+  <h2 class="text-5xl font-black px-10 mb-8">✦ scroll fast → frames</h2>
+  <div class="flex gap-8 px-10 frames-track" id="frames-wrapper">
+    <img src="./image/frame1.avif" class="h-[400px] w-auto rounded-2xl flex-shrink-0 shadow-2xl img-max-h">
+    <img src="./image/frame2.avif" class="h-[400px] w-auto rounded-2xl flex-shrink-0 shadow-2xl img-max-h">
+    <img src="./image/frame3.jfif" class="h-[400px] w-auto rounded-2xl flex-shrink-0 shadow-2xl img-max-h">
+    <img src="./image/frame4.jfif" class="h-[400px] w-auto rounded-2xl flex-shrink-0 shadow-2xl img-max-h">
+    <img src="./image/frame5.jpg" class="h-[400px] w-auto rounded-2xl flex-shrink-0 shadow-2xl img-max-h">
+    <img src="./image/frame6.png" class="h-[400px] w-auto rounded-2xl flex-shrink-0 shadow-2xl img-max-h">
+    <img src="./image/frame7.webp" class="h-[400px] w-auto rounded-2xl flex-shrink-0 shadow-2xl img-max-h">
+    <img src="./image/frame8.webp" class="h-[400px] w-auto rounded-2xl flex-shrink-0 shadow-2xl img-max-h">
+    <img src="./image/frame9.png" class="h-[400px] w-auto rounded-2xl flex-shrink-0 shadow-2xl img-max-h">
+    <img src="./image/frame10.png" class="h-[400px] w-auto rounded-2xl flex-shrink-0 shadow-2xl img-max-h">
+    <img src="./image/frame11.webp" class="h-[400px] w-auto rounded-2xl flex-shrink-0 shadow-2xl img-max-h">
+  </div>
+</section>
+
+<!-- STORY IMAGE + TEXT (more text) -->
+<section class="px-8 py-28 space-y-32 bg-gradient-to-b from-white to-pink-50/30 relative">
+  <div class="bg-watermark right-0 top-40 opacity-10">CHARACTERS</div>
+  <!-- Rintaro -->
+  <div class="flex flex-col md:flex-row items-center gap-16 story-item max-w-7xl mx-auto">
+    <div class="w-full md:w-1/2 rounded-3xl shadow-2xl overflow-hidden"><img src="./image/frame10.png" class=" img-max-h h-[550px] object-cover story-img hover:scale-105 duration-700"></div>
+    <div class="story-text md:w-1/2 space-y-5">
+      <h4 class="text-6xl font-black">Rintaro Tsumugi</h4>
+      <p class="text-2xl font-serif italic text-pink-700">“intimidating gaze, golden heart”</p>
+      <p class="text-lg text-gray-600 leading-relaxed">Feared because of his looks, Rintaro lives a lonely life until he wanders into Chidori's bakery. The warmth he finds there, especially from Waguri, slowly melts his defenses. He learns that true strength is allowing someone to see your scars. His journey from outcast to cherished friend is the soul of this story.</p>
+    </div>
+  </div>
+  <!-- Kaoruko -->
+  <div class="flex flex-col md:flex-row-reverse items-center gap-16 story-item max-w-7xl mx-auto">
+    <div class="w-full md:w-1/2 rounded-3xl shadow-2xl overflow-hidden"><img src="./image/frame9.png" class="w-full img-max-h h-[550px] object-cover story-img hover:scale-105"></div>
+    <div class="story-text md:w-1/2 space-y-5">
+      <h4 class="text-6xl font-black">Kaoruko Waguri</h4>
+      <p class="text-2xl font-serif italic text-pink-700">“sunshine wrapped in flour”</p>
+      <p class="text-lg text-gray-600 leading-relaxed">Kaoruko believes in the goodness of people. She doesn't see a delinquent when she looks at Rintaro — she sees a boy who needs a friend. Her kindness is unwavering, and it becomes the catalyst for change. She embodies the fragrant flower: blooming with dignity, no matter the soil.</p>
+    </div>
+  </div>
+  <!-- Inner Circle -->
+  <div class="flex flex-col md:flex-row items-center gap-16 story-item max-w-7xl mx-auto">
+    <div class="w-full md:w-1/2 rounded-3xl shadow-2xl overflow-hidden"><img src="./image/Subaru, Saku.jpg" class="w-full img-max-h h-[550px] object-cover story-img hover:scale-105"></div>
+    <div class="story-text md:w-1/2 space-y-5">
+      <h4 class="text-6xl font-black">The Inner Circle</h4>
+      <p class="text-2xl font-serif italic text-pink-700">“friends become sanctuary”</p>
+      <p class="text-lg text-gray-600 leading-relaxed">Subaru, Saku, and the others bridge the gap between rival schools. They prove that understanding can dismantle prejudice. Together, they create a space where everyone can be themselves — a garden where even the most fragile flowers can bloom with dignity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HAPPINESS SECTION · PURE & MINIMAL WITH WAGURI ONLY -->
+<section class="py-40 px-6 relative overflow-hidden">
+  <!-- No background color - completely transparent/white -->
+  
+  <!-- Subtle floating particles only (no bg color) -->
+  <div class="absolute top-40 left-20 text-6xl opacity-10 rotate-12 pointer-events-none">✿</div>
+  <div class="absolute bottom-40 right-20 text-7xl opacity-10 -rotate-12 pointer-events-none">✿</div>
+  <div class="absolute top-1/3 right-1/4 text-5xl opacity-5 rotate-45 pointer-events-none">✤</div>
+  <div class="absolute bottom-1/4 left-1/3 text-4xl opacity-5 -rotate-12 pointer-events-none">✤</div>
+
+  <div class="max-w-6xl mx-auto relative z-20">
+    
+    <!-- WAGURI IMAGE ONLY - Full size, no rounded box, natural display -->
+    <div class="flex justify-center mb-16">
+      <div class="relative inline-block">
+        <!-- Subtle shadow/glow behind image -->
+        <div class="absolute -inset-4 bg-gradient-to-t from-pink-200/20 to-transparent blur-2xl"></div>
+        <!-- Image displayed perfectly - no border-radius, natural shape -->
+        <img src="./image/happy-waguri.webp" alt="Kaoruko Waguri" class="relative h-[220px] rounded-md max-w-md object-contain">
+      </div>
+    </div>
+
+    <!-- TINY TEXT - Upper label -->
+    <div class="text-center mb-4">
+      <span class="text-xs uppercase tracking-[0.3em] text-gray-400 font-light">the essence of</span>
+    </div>
+
+    <!-- MEDIUM TEXT - Sub heading with icons -->
+    <div class="flex items-center justify-center gap-4 mb-6">
+      <i class="fa-regular fa-flower text-2xl text-pink-300"></i>
+      <span class="text-xl font-serif italic text-gray-500">kaoruko waguri</span>
+      <i class="fa-regular fa-flower text-2xl text-pink-300"></i>
+    </div>
+
+    <!-- LARGE TEXT - Main heading -->
+    <h2 class="text-7xl md:text-8xl lg:text-9xl font-black italic text-center leading-[1.1] tracking-tight mb-6">
+      <span class="bg-gradient-to-r from-pink-500 via-rose-500 to-amber-500 bg-clip-text text-transparent">
+        Happiness
+      </span>
+      <br>
+      <span class="text-gray-900">is a blooming</span>
+      <br>
+      <span class="bg-gradient-to-r from-amber-500 via-pink-500 to-rose-500 bg-clip-text text-transparent">
+        flower.
+      </span>
+    </h2>
+
+    <!-- Decorative line with icon -->
+    <div class="flex items-center justify-center gap-2 my-8">
+      <span class="h-px w-12 bg-gradient-to-r from-transparent to-pink-300"></span>
+      <i class="fa-regular fa-circle text-pink-300 text-xs"></i>
+      <i class="fa-solid fa-circle text-amber-300 text-[8px]"></i>
+      <i class="fa-regular fa-circle text-pink-300 text-xs"></i>
+      <span class="h-px w-12 bg-gradient-to-l from-transparent to-pink-300"></span>
+    </div>
+
+    <!-- SMALL TEXT - Poetic line -->
+    <p class="text-sm text-center text-gray-400 tracking-wide mb-10 font-light">
+      <i class="fa-regular fa-quote-left text-pink-300 mr-1"></i>
+      a quiet revolution in a noisy world
+      <i class="fa-regular fa-quote-right text-pink-300 ml-1"></i>
+    </p>
+
+    <!-- LARGE TEXT - Main quote -->
+    <div class="max-w-4xl mx-auto text-center mb-14">
+      <p class="text-3xl md:text-4xl lg:text-5xl font-serif italic leading-relaxed text-gray-800">
+        "Every petal holds a story <br class="hidden md:block"> 
+        of overcoming prejudice."
+      </p>
+    </div>
+
+    <!-- MEDIUM TEXT - Supporting text -->
+    <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto text-center leading-relaxed font-light mb-16">
+      It's the quiet dignity of choosing kindness — again and again — 
+      <span class="text-pink-500 font-normal">that makes the fragrance last.</span>
+    </p>
+
+    <!-- Three card grid - Varied text sizes inside -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      
+      <!-- Card 1 -->
+      <div class="group text-center p-8 hover:bg-pink-50/30 transition-all duration-500">
+        <div class="mb-5">
+          <i class="fa-regular fa-heart text-4xl text-pink-400 group-hover:scale-110 transition duration-300"></i>
+        </div>
+        <!-- LARGE card title -->
+        <h4 class="text-3xl font-bold mb-3 text-gray-800">Courage</h4>
+        <!-- SMALL card label -->
+        <p class="text-xs uppercase tracking-wider text-pink-400 mb-4 font-medium">to be soft</p>
+        <!-- MEDIUM card description -->
+        <p class="text-base text-gray-500 leading-relaxed">In a world that rewards hardness, choosing tenderness is an act of radical bravery.</p>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="group text-center p-8 hover:bg-emerald-50/30 transition-all duration-500">
+        <div class="mb-5">
+          <i class="fa-regular fa-leaf text-4xl text-emerald-500 group-hover:scale-110 transition duration-300"></i>
+        </div>
+        <!-- LARGE card title -->
+        <h4 class="text-3xl font-bold mb-3 text-gray-800">Growth</h4>
+        <!-- SMALL card label -->
+        <p class="text-xs uppercase tracking-wider text-emerald-500 mb-4 font-medium">through connection</p>
+        <!-- MEDIUM card description -->
+        <p class="text-base text-gray-500 leading-relaxed">We don't bloom in isolation. True growth happens when we let others see our roots.</p>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="group text-center p-8 hover:bg-amber-50/30 transition-all duration-500">
+        <div class="mb-5">
+          <i class="fa-regular fa-star text-4xl text-amber-500 group-hover:scale-110 transition duration-300"></i>
+        </div>
+        <!-- LARGE card title -->
+        <h4 class="text-3xl font-bold mb-3 text-gray-800">Dignity</h4>
+        <!-- SMALL card label -->
+        <p class="text-xs uppercase tracking-wider text-amber-500 mb-4 font-medium">in bloom</p>
+        <!-- MEDIUM card description -->
+        <p class="text-base text-gray-500 leading-relaxed">The most fragrant flower is the one that opens despite the storm. That is dignity.</p>
+      </div>
+      
+    </div>
+
+    <!-- TINY TEXT - Bottom quote with icons -->
+    <div class="mt-20 flex flex-wrap items-center justify-center gap-3">
+      <i class="fa-regular fa-message text-pink-300 text-sm"></i>
+      <span class="text-xs uppercase tracking-[0.2em] text-gray-300">—</span>
+      <span class="text-sm text-gray-400 font-light italic">"The fragrance of kindness never fades."</span>
+      <span class="text-xs uppercase tracking-[0.2em] text-gray-300">—</span>
+      <i class="fa-regular fa-message text-pink-300 text-sm"></i>
+    </div>
+
+    <!-- MEDIUM TEXT - Final line -->
+    <p class="text-center text-xl text-gray-400 mt-8 font-serif italic">
+      — Kaoruko's wisdom —
+    </p>
+
+  </div>
+</section>
+
+<!-- AWESOME FOOTER · OVERLAPPING SUBARU + BIG BG TEXT -->
+<footer class="relative bg-[#faf7f2] text-gray-800 overflow-visible mt-32">
+  <!-- Big Background Watermark Text -->
+  <div class="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none select-none">
+    <span class="text-[18vw] font-black italic opacity-[0.04] tracking-wider whitespace-nowrap text-gray-900">FRAGRANT</span>
+  </div>
+  <div class="absolute top-1/2 right-0 -translate-y-1/2 overflow-hidden pointer-events-none select-none">
+    <span class="text-[15vw] font-black italic opacity-[0.03] tracking-wider whitespace-nowrap text-gray-900 rotate-90 origin-center">BLOOM</span>
+  </div>
+  <div class="absolute bottom-10 left-10 overflow-hidden pointer-events-none select-none">
+    <span class="text-[10vw] font-serif italic opacity-[0.04] text-gray-900">Dignity</span>
+  </div>
+
+  <!-- SUBARU IMAGE - Overlapping, positioned to break out of footer top -->
+  <div class="absolute -top-32 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
+    <div class="relative">
+      <!-- Shadow/glow under Subaru -->
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-12 bg-black/10 rounded-full blur-xl"></div>
+      <!-- Subaru PNG with transparent background -->
+      <img src="./image/subaru.webp" alt="Subaru" class="relative h-64 md:h-80 w-auto object-contain drop-shadow-2xl">
+      <!-- Floating decorative elements around Subaru -->
+      <div class="absolute -top-5 -left-5 text-3xl text-pink-300/40 animate-pulse">✿</div>
+      <div class="absolute top-10 -right-8 text-2xl text-amber-300/40 animate-pulse" style="animation-delay: 0.7s;">✤</div>
+      <div class="absolute -bottom-5 -left-3 text-xl text-rose-300/40 animate-pulse" style="animation-delay: 1.2s;">✿</div>
+    </div>
+  </div>
+
+  <!-- Decorative wave/curve at top of footer -->
+  <div class="absolute top-0 left-0 w-full overflow-hidden leading-[0] -translate-y-full">
+    <svg class="relative block w-full h-16" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#faf7f2"></path>
+    </svg>
+  </div>
+
+  <!-- Main Footer Content -->
+  <div class="relative z-20 max-w-7xl mx-auto px-8 pt-28 pb-12">
+    
+    <!-- Top Row: Logo and Social -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <img src="./image/logo.png" alt="Fragrant Flower" class="h-12 opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300">
+      </div>
+      
+      <!-- Tagline -->
+      <div class="text-center">
+        <p class="text-sm uppercase tracking-[0.4em] text-gray-400 font-light">Dignity in Bloom</p>
+      </div>
+      
+      <!-- Social Icons - Clean & Minimal -->
+      <div class="flex gap-1">
+        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-pink-500 hover:bg-pink-50 transition-all duration-300">
+          <i class="fa-brands fa-instagram text-xl"></i>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-blue-500 hover:bg-blue-50 transition-all duration-300">
+          <i class="fa-brands fa-twitter text-xl"></i>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 hover:bg-red-50 transition-all duration-300">
+          <i class="fa-brands fa-youtube text-xl"></i>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-indigo-500 hover:bg-indigo-50 transition-all duration-300">
+          <i class="fa-brands fa-discord text-xl"></i>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-sky-500 hover:bg-sky-50 transition-all duration-300">
+          <i class="fa-brands fa-pinterest text-xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="h-px w-full bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-12"></div>
+
+    <!-- Navigation Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+      
+      <!-- Column 1 -->
+      <div>
+        <h5 class="text-sm font-bold uppercase tracking-wider mb-6 text-gray-500 flex items-center gap-2">
+          <i class="fa-regular fa-compass text-pink-400 text-xs"></i>
+          Explore
+        </h5>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-gray-600 hover:text-pink-500 transition duration-200 text-sm">Story</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-pink-500 transition duration-200 text-sm">Characters</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-pink-500 transition duration-200 text-sm">Gallery</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-pink-500 transition duration-200 text-sm">Bloom Journal</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-pink-500 transition duration-200 text-sm">Behind the Scenes</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 2 -->
+      <div>
+        <h5 class="text-sm font-bold uppercase tracking-wider mb-6 text-gray-500 flex items-center gap-2">
+          <i class="fa-regular fa-heart text-rose-400 text-xs"></i>
+          Community
+        </h5>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-gray-600 hover:text-rose-500 transition duration-200 text-sm">Fan Art</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-rose-500 transition duration-200 text-sm">Discord</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-rose-500 transition duration-200 text-sm">Events</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-rose-500 transition duration-200 text-sm">Cosplay</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-rose-500 transition duration-200 text-sm">Fan Theories</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 3 -->
+      <div>
+        <h5 class="text-sm font-bold uppercase tracking-wider mb-6 text-gray-500 flex items-center gap-2">
+          <i class="fa-regular fa-bookmark text-amber-400 text-xs"></i>
+          Resources
+        </h5>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-gray-600 hover:text-amber-600 transition duration-200 text-sm">Privacy</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-amber-600 transition duration-200 text-sm">Terms</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-amber-600 transition duration-200 text-sm">Cookies</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-amber-600 transition duration-200 text-sm">Accessibility</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-amber-600 transition duration-200 text-sm">Sitemap</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 4 - Quote & Newsletter -->
+      <div class="space-y-6">
+        <div class="border-l-4 border-pink-300 pl-4">
+          <p class="text-gray-500 italic text-sm leading-relaxed">
+            <i class="fa-solid fa-quote-left text-pink-300/40 mr-1 text-xs"></i>
+            Fragrant flowers bloom with dignity, even in the harshest soil.
+            <i class="fa-solid fa-quote-right text-pink-300/40 ml-1 text-xs"></i>
+          </p>
+          <p class="text-right text-xs text-gray-400 mt-2">— Kaoruko Waguri</p>
+        </div>
+        
+        <div class="space-y-3">
+          <p class="text-xs text-gray-500 uppercase tracking-wider">Newsletter</p>
+          <div class="flex border-b border-gray-300 focus-within:border-pink-400 transition-colors">
+            <input type="email" placeholder="Your email" class="w-full bg-transparent py-2 text-sm text-gray-700 placeholder-gray-400 focus:outline-none">
+            <button class="text-gray-400 hover:text-pink-500 transition px-2">
+              <i class="fa-regular fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-200">
+      
+      <div class="flex items-center gap-2 text-xs text-gray-400">
+        <i class="fa-regular fa-copyright text-[10px]"></i>
+        <span>2026 Fragrant Flowers Bloom</span>
+        <span class="text-gray-300">•</span>
+        <span>All rights reserved</span>
+      </div>
+      
+      <div class="flex items-center gap-4 text-xs">
+        <span class="text-gray-400 flex items-center gap-1">
+          <i class="fa-regular fa-flower text-pink-300"></i>
+          Made with dignity
+        </span>
+        <span class="text-gray-300">•</span>
+        <span class="text-gray-400 flex items-center gap-1">
+          <i class="fa-regular fa-star text-amber-300"></i>
+          Bloom eternal
+        </span>
+      </div>
+      
+      <div class="flex items-center gap-4 text-xs text-gray-400">
+        <a href="#" class="hover:text-pink-500 transition">Privacy</a>
+        <a href="#" class="hover:text-pink-500 transition">Terms</a>
+        <a href="#" class="hover:text-pink-500 transition">Credits</a>
+      </div>
+    </div>
+
+    <!-- Tiny decorative icons at bottom -->
+    <div class="flex justify-center gap-2 mt-8 text-gray-300 text-[8px]">
+      <i class="fa-regular fa-circle"></i>
+      <i class="fa-regular fa-circle"></i>
+      <i class="fa-regular fa-circle text-pink-300"></i>
+      <i class="fa-regular fa-circle"></i>
+      <i class="fa-regular fa-circle"></i>
+    </div>
+
+  </div>
+</footer>
+
+
+<script src="./index.js"></script>
+
+<script>
+  console.log('✨ refreshed: carousel text, faster frames, new happiness & footer');
+</script>
+</body>
+</html>
